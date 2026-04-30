@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>js practice projects</title>
+</head>
+<body>
+  <div class="project__wrapper">
+    <h1 class="title">JavaScript Practice Projects</h1>
+    <div class="links__project">
+
+      <ol>
+        <li>🔐 Генератор паролей | <a href="#">Открыть</a></li>
+        <li>✅ To-Do List | <a href="#">Открыть</a></li>
+        <li>🧮 Калькулятор | <a href="#">Открыть</a></li>
+        <li>🎯 Угадай число | <a href="#">Открыть</a></li>
+        <li>🍅 Pomodoro-таймер | <a href="#">Открыть</a></li>
+        <li>🎲 Генератор данных | <a href="#">Открыть</a></li>
+        <li>☁️ Погода | <a href="#">Открыть</a></li>
+        <li>🎬 Поиск фильмов | <a href="#">Открыть</a></li>
+        <li>❌⭕ Крестики-нолики | <a href="#">Открыть</a></li>
+        <li>🧩 Sudoku Solver | <a href="#">Открыть</a></li>
+        <li>📝 Markdown редактор | <a href="#">Открыть</a></li>
+        <li>👥 Мини-соцсеть | <a href="#">Открыть</a></li>
+        <li>💬 Чат (WebSocket) | <a href="#">Открыть</a></li>
+        <li>📋 Kanban Board | <a href="#">Открыть</a></li>
+      </ol>
+    </div>
+  </div>
+  <!-- Кнопка смены темы -->
+<button class="theme-toggle" id="themeToggle">🎨 Сменить тему</button>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  
+  // Функция смены темы
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'light') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  
+  // Загрузка сохранённой темы
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+  
+  // Обработчик клика
+  themeToggle.addEventListener('click', toggleTheme);
+</script>
+</body>
+</html>
